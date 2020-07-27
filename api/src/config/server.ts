@@ -1,4 +1,4 @@
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer, PubSub } from 'apollo-server';
 import * as mongoose from 'mongoose';
 
 export async function startServer({ typeDefs, resolvers }) {
@@ -7,7 +7,8 @@ export async function startServer({ typeDefs, resolvers }) {
     useUnifiedTopology: true,
   });
 
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const pubsub = new PubSub();
+  const server = new ApolloServer({ typeDefs, resolvers, context: { pubsub } });
   await server
     .listen()
     .then(({ url }) => console.log(`🔥 Apollo Server started at ${url}`));
