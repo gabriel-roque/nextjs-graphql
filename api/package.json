@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "api:dev": "nodemon -e ts,gql --exec ts-node api/src/index.ts"
+    "api:dev": "nodemon -e ts,gql --exec ts-node src/index.ts"
   },
   "dependencies": {
     "@types/mongoose": "^5.7.32",
@@ -14,10 +11,7 @@
     "graphql": "^15.3.0",
     "merge-graphql-schemas": "^1.7.8",
     "mongoose": "^5.9.25",
-    "next": "9.3.5",
     "nodemon": "^2.0.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }

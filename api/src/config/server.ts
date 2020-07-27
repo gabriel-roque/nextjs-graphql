@@ -8,7 +8,12 @@ export async function startServer({ typeDefs, resolvers }) {
   });
 
   const pubsub = new PubSub();
-  const server = new ApolloServer({ typeDefs, resolvers, context: { pubsub } });
+  const server = new ApolloServer({
+    cors: { origin: '*', credentials: false },
+    typeDefs,
+    resolvers,
+    context: { pubsub },
+  });
   await server
     .listen()
     .then(({ url }) => console.log(`🔥 Apollo Server started at ${url}`));
