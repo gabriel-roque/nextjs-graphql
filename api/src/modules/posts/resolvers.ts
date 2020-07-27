@@ -1,6 +1,10 @@
 import Post from '../../models/post.model';
+import User from '../../models/user.model';
 
 export default {
+  Post: {
+    author: async (post) => await User.findById(post.author),
+  },
   Query: {
     posts: async () => await Post.find(),
     post: async (_, { id }) => await Post.findById(id),
