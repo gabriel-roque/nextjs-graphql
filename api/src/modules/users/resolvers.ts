@@ -1,20 +1,11 @@
 import User from '../../models/user.model';
+import Post from '../../models/post.model';
 import { USER_ADDED } from './channels';
-
-/* For example
-
-  query {
-    users {
-      _id
-      fullName
-    }
-  }
-  
-*/
 
 export default {
   User: {
     fullName: (user) => `${user.firstName} ${user.lastName}`,
+    post: async (user) => await Post.find({ author: user._id }),
   },
   Query: {
     users: async () => await User.find(),

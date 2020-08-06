@@ -5,6 +5,7 @@ type User {
   fullName: String
   email: String
   active: Boolean!
+  post: [Post!]!
 }
 
 input UserInput {
