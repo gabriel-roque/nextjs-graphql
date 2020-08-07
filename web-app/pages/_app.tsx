@@ -1,13 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
 
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/',
-  cache: new InMemoryCache(),
-});
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../graphql/apollo-client';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
