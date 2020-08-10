@@ -19,3 +19,11 @@ export const GET_POSTS = gql`
     }
   }
 `;
+
+export const MODAL_USER_IS_OPEN = gql`
+  query getStatusModalUser {
+    modalsStatus @client {
+      user
+    }
+  }
+`;
