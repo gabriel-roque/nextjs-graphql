@@ -4,7 +4,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { client } from '../graphql/apollo-client';
 
 export default class MyApp extends App {
